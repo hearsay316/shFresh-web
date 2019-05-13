@@ -2,7 +2,7 @@
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <button @click="login">按钮</button>
-    <button @click="getuser">按钮</button>
+    <button @click="GetUser">按钮</button>
   </div>
 </template>
 
@@ -21,10 +21,6 @@ axios.get("http://localhost:8080/register").then((res)=>{
   },
   methods:{
     login(){
-      let obj = {
-        userName:"swswd",
-        password:"swdswsw"
-      };
       axios({
         method: 'post',
         withCredentials:true,
@@ -34,7 +30,8 @@ axios.get("http://localhost:8080/register").then((res)=>{
           password:"swdswsw"
         }
       });
-    },getuser(){
+    },
+    GetUser(){
       //("http://localhost:8080/Article/user")
       axios({
         method: 'get',

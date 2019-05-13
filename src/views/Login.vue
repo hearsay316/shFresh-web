@@ -31,32 +31,24 @@
           </div>
         </div>
       </el-main>
-      <el-footer class="footer no-mp" height="auto">
-          <div class="foot_link">
-            <a href="#">关于我们</a>
-            <span>|</span>
-            <a href="#">联系我们</a>
-            <span>|</span>
-            <a href="#">招聘人才</a>
-            <span>|</span>
-            <a href="#">友情链接</a>
-          </div>
-          <p>CopyRight © 2019 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
-          <p>电话：010-****888    京ICP备*******8号</p>
-
-      </el-footer>
+      <AppFooter></AppFooter>
     </el-container>
   </div>
 </template>
 
 <script>
+import AppFooter from "../components/AppFooter";
+
 export default {
-  name: 'HelloWorld',
+  name: 'Login',
   props: {
     msg: String
   },
   data(){
     return { visible: false }
+  },
+  components:{
+    AppFooter
   }
 }
 </script>
@@ -171,19 +163,6 @@ export default {
         cursor: pointer;
 
 
-  .footer
-    border-top: 2px solid #42ad46;
-    margin: 0 0 30px 0;
-    .foot_link
-      text-align: center;
-      margin-top: 30px
-      a
-        color: #4e4e4e;
-      span
-        padding: 0 10px;
-    p
-        text-align: center;
-        margin-top: 10px;
 
 
 

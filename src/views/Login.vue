@@ -2,7 +2,7 @@
   <div class="hello">
     <el-container>
       <el-header class="login_top" height=" 130px">
-          <router-link class="login_logo" to="/about">
+          <router-link class="login_logo" to="/home">
             <img src="../assets/images/logo02.png" alt="">
           </router-link>
       </el-header>
@@ -17,15 +17,15 @@
             </div>
             <div class="form_input">
               <form  autocomplete="off">
-                <input   type="text" name="username" class="name_input" placeholder="请输入用户名"/>
+                <input v-model="login.username"   type="text" name="username" class="name_input" placeholder="请输入用户名"/>
                 <div  class="user_error"></div>
-                <input  onfocus="this.type='password'" name="pwd" class="pass_input" placeholder="请输入密码">
+                <input v-model="login.password" onfocus="this.type='password'" name="pwd" class="pass_input" placeholder="请输入密码">
                 <div class="pwd_error"></div>
                 <div class="more_input">
-                  <label><input  autocomplete = "off" type="checkbox"><span class="padding-8">记住用户名</span></label>
+                  <label><input v-model="login.Remember"  autocomplete = "off" type="checkbox"><span class="padding-8">记住用户名</span></label>
                   <a href="#">忘记密码</a>
                 </div>
-                <input type="submit" name="" value="登录" class="input_submit">
+                <input type="submit" :disabled="HandleDisabled" value="登录" class="input_submit">
               </form>
             </div>
           </div>
@@ -41,11 +41,20 @@ import AppFooter from "../components/AppFooter";
 
 export default {
   name: 'Login',
-  props: {
-    msg: String
-  },
   data(){
-    return { visible: false }
+    return { login: {
+        username: "swswd",
+        password: "swdswsw",
+        Remember: false
+      } }
+  },
+  computed:{
+    HandleDisabled(){
+      if(this.login.username.length>6&&this.login.password.length>6){
+        return false
+      }
+      return  true
+    }
   },
   components:{
     AppFooter

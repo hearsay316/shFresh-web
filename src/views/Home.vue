@@ -1,8 +1,6 @@
 <template>
     <div class="home">
-        <Login msg="Welcome to Your Vue.js App"/>
-        <button @click="login">按钮</button>
-        <button @click="GetUser">按钮</button>
+       dddddddddd
     </div>
 </template>
 
@@ -50,3 +48,17 @@
         }
     }
 </script>
+<style>
+    .addresslist {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .main {
+        height: 100%;
+        width: calc(100% + 17px);
+        overflow-y: scroll;
+        padding: 15px 32px 15px 15px;
+    }
+</style>

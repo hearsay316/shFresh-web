@@ -4,6 +4,8 @@ import router from './router'
 import store from './store/store'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './assets/css/main.css'
+import './assets/css/reset.css'
 //import { Button, Select, Dialog , Container} from 'element-ui';
 
 Vue.use(Element);

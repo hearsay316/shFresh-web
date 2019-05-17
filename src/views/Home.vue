@@ -11,7 +11,9 @@
     export default {
         name: 'home',
         mounted() {
-            axios.get("http://localhost:8080/register").then((res) => {
+            axios.get("http://localhost:8080/Article/user",{
+                withCredentials: true
+            }).then((res) => {
                 console.log(res);
             }).catch((error) => {
                 console.log(error);

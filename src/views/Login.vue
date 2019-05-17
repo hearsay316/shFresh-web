@@ -13,10 +13,10 @@
           <div class="login_form clearfix">
             <div class="login_title clearfix">
               <h1>用户登录</h1>
-              <router-link to="/reg">立即注册</router-link>
+              <router-link to="/register">立即注册</router-link>
             </div>
             <div class="form_input">
-              <form  autocomplete="off">
+              <form ref="LoginForm" autocomplete="off" v-on:submit.prevent="HandleLogin">
                 <input v-model="login.username"   type="text" name="username" class="name_input" placeholder="请输入用户名"/>
                 <div  class="user_error"></div>
                 <input v-model="login.password" onfocus="this.type='password'" name="pwd" class="pass_input" placeholder="请输入密码">
@@ -38,15 +38,32 @@
 
 <script>
 import AppFooter from "../components/AppFooter";
-
+import {mapActions} from "vuex"
 export default {
   name: 'Login',
-  data(){
-    return { login: {
-        username: "swswd",
-        password: "swdswsw",
+  data() {
+    return {
+      login: {
+        username: "",
+        password: "",
         Remember: false
-      } }
+      }
+    }
+  },
+  mounted(){
+
+  },
+  methods: {
+    ...mapActions({_Login: "Login"}),
+      HandleLogin() {
+          this._Login(this.login).then(res =>
+              res !== 401 ? this.$router.push("/home") : this._loginError(res))
+      },
+      _loginError(res){
+          alert("登录错误");
+          this.$refs.LoginForm.reset(); // 清空表单
+
+      }
   },
   computed:{
     HandleDisabled(){
@@ -170,6 +187,10 @@ export default {
         border: 0px;
         font-family: 'Microsoft Yahei';
         cursor: pointer;
+        text-align center
+      .input_submit[disabled]
+        background-color: #F8F8F8;
+        color: #4e4e4e;
 
 
 

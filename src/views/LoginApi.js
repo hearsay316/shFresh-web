@@ -7,3 +7,10 @@ export const LoginUser= (data)=>{
        data: data
    }).then(res=>res.data).catch(error=>401)
 };
+export const User =()=>{
+   return    axios({
+      method: 'get',
+      withCredentials: true,
+      url: 'http://localhost:8080/Article/user',
+   }).then(res=>res.data).catch(error=>401)
+};

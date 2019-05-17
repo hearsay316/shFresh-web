@@ -1,3 +1,4 @@
+<!--suppress JSIgnoredPromiseFromCall -->
 <template>
     <div class="home">
        dddddddddd
@@ -6,47 +7,18 @@
 
 <script>
     // @ is an alias to /src
-    import Login from '@/views/Login.vue'
-
     export default {
         name: 'home',
         mounted() {
-            axios.get("http://localhost:8080/Article/user",{
-                withCredentials: true
-            }).then((res) => {
-                console.log(res);
-            }).catch((error) => {
-                console.log(error);
-            })
+         this.GetUser();
         },
         methods: {
-            login() {
-                axios({
-                    method: 'post',
-                    withCredentials: true,
-                    url: 'http://localhost:8080/register',
-                    data: {
-                        username: "swswd",
-                        password: "swdswsw"
-                    }
-                });
-            },
             GetUser() {
-                //("http://localhost:8080/Article/user")
-                axios({
-                    method: 'get',
-                    withCredentials: true,
-                    url: 'http://localhost:8080/Article/user',
-                }).then((res) => {
-                    console.log(res);
-                }).catch((error) => {
-                    console.log(error);
-                })
+                this.$store.dispatch("Home/ShowUser");
             }
-
         },
         components: {
-            Login
+
         }
     }
 </script>

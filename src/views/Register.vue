@@ -16,7 +16,7 @@
                         <ul>
                             <li>
                                 <label>用户名:</label>
-                                <input type="text" v-model="reg.user_name" name="user_name" id="user_name">
+                                <input type="text" v-model="reg.username" name="user_name" id="user_name">
                                 <span class="error_tip">提示信息</span>
                             </li>
                             <li>
@@ -58,7 +58,7 @@
         data() {
             return {
                 reg:{
-                    user_name:''  ,
+                    username:''  ,
                     pwd:'',
                     cpwd:"",
                     email:""
@@ -66,9 +66,9 @@
             }
         },
         methods:{
-            ...mapActions({_HandleReg:"HandleReg"}),
+           // ...mapActions({_HandleReg:"HandleReg"}),
             HandleReg(){
-                this.$store.dispatch("")
+                this.$store.dispatch("Register/VAHandleReg",this.reg)
             }
         },
         components: {

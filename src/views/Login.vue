@@ -53,11 +53,13 @@ export default {
   mounted(){
       this.init();
   },
+    // //  res !== 401 ? this.$router.push("/home") : this._loginError(res))
   methods: {
     ...mapActions({_Login: "Login"}),
-      HandleLogin() {
+      HandleLogin: function () {
           this._Login(this.login).then(res =>
-              res !== 401 ? this.$router.push("/home") : this._loginError(res))
+              console.log(res)
+          )
       },
       _loginError(res){
           alert("登录错误");

@@ -51,7 +51,7 @@ export default {
     }
   },
   mounted(){
-
+      this.init();
   },
   methods: {
     ...mapActions({_Login: "Login"}),
@@ -62,7 +62,12 @@ export default {
       _loginError(res){
           alert("登录错误");
           this.$refs.LoginForm.reset(); // 清空表单
-
+      },
+      init(){
+          let success  = this.$route.query.success;
+          if (success){
+            this.$message.success(success);
+          }
       }
   },
   computed:{

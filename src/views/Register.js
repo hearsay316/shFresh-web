@@ -4,7 +4,7 @@ import {register} from "./LoginApi";
 const actions = {
     async VAHandleReg({},data){
         let res = await register(data);
-        console.log(data);
+        console.log(res);
     }
 };
 const state = {};

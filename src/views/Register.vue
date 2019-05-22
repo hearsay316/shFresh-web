@@ -65,10 +65,19 @@
                 }
             }
         },
+        mounted(){
+          this.ErrorReg();
+        },
         methods:{
            // ...mapActions({_HandleReg:"HandleReg"}),
             HandleReg(){
                 this.$store.dispatch("Register/VAHandleReg",this.reg)
+            },
+            ErrorReg(){
+                let error  = this.$route.query.error;
+                if (error){
+                    this.$message.error(error);
+                }
             }
         },
         components: {

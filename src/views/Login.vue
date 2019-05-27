@@ -186,18 +186,18 @@ export default {
         justify-content  space-between
         margin-bottom 30px
       .input_submit
-        width: 100%;
-        height: 40px;
-        background-color: #47aa34;
-        color: #fff;
+        width 100%
+        height 40px
+        background-color #47aa34
+        color #fff
         font-size: 22px;
-        border: 0px;
-        font-family: 'Microsoft Yahei';
-        cursor: pointer;
+        border 0px
+        font-family 'Microsoft Yahei'
+        cursor pointer
         text-align center
       .input_submit[disabled]
-        background-color: #F8F8F8;
-        color: #4e4e4e;
+        background-color #F8F8F8
+        color #4e4e4e
 
 
 

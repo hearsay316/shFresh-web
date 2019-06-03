@@ -55,11 +55,12 @@ export default {
   },
     // //  res !== 401 ? this.$router.push("/home") : this._loginError(res))
   methods: {
-    ...mapActions({_Login: "Login"}),
-      HandleLogin: function () {
-          this._Login(this.login).then(res =>
-              console.log(res)
-          )
+    ...mapActions({_Login: "Login/Login"}),
+      HandleLogin() {
+          this._Login(this.login).then(res =>{
+              console.log(this.$route, this.$router,66666)
+               this.$router.push({path:"/home"})
+              })
       },
       _loginError(res){
           alert("登录错误");
@@ -73,12 +74,13 @@ export default {
       }
   },
   computed:{
-    HandleDisabled(){
-      if(this.login.username.length>6&&this.login.password.length>6){
-        return false
+
+      /**
+       * @return {boolean}
+       */
+      HandleDisabled: function () {
+          return !(this.login.username.length > 6 && this.login.password.length > 6)
       }
-      return  true
-    }
   },
   components:{
     AppFooter

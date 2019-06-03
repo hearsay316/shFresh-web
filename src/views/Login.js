@@ -2,8 +2,13 @@ import {LoginUser} from "./LoginApi";
 
 
 const actions = {
-    Login({},data){
-     return LoginUser(data)
+    Login({ commit },data){
+     return LoginUser(data).then(res=>{
+             commit("MULogin","登陆成功",{root:true})
+         return res
+     }).catch((error)=>{
+         console.log(error)
+         return error})
     }
 };
 const state = {};
@@ -12,7 +17,8 @@ const mutations = {};
 export default {
     state,
     actions,
-    mutations
+    mutations,
+    namespaced: true
 }
 
 /*

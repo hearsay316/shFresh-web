@@ -5,7 +5,7 @@ export const LoginUser= (data)=>{
        withCredentials: true,
        url: 'http://localhost:8080/login',
        data: data
-   }).then(res=>res.data).catch(error=>401)
+   }).then(res=>res.data).catch(error=>Error(error))
 };
 export const User =()=>{
    return    axios({

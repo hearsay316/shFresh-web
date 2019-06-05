@@ -1,5 +1,6 @@
 import axios from "axios"
-export const LoginUser= (data)=>{
+ // post请求时handle开始  get为show
+export const HandleLoginUser= (data)=>{
     return    axios({
        method: 'post',
        withCredentials: true,
@@ -7,7 +8,8 @@ export const LoginUser= (data)=>{
        data: data
    }).then(res=>res.data).catch(error=>Error(error))
 };
-export const User =()=>{
+
+export const ShowUser =()=>{
    return    axios({
       method: 'get',
       withCredentials: true,
@@ -15,7 +17,7 @@ export const User =()=>{
    }).then(res=>res.data).catch(error=>401)
 };
 
-export const register= (data)=>{
+export const HandelRegister= (data)=>{
    return    axios({
       method: 'post',
       withCredentials: true,

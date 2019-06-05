@@ -71,7 +71,7 @@
         methods:{
            // ...mapActions({_HandleReg:"HandleReg"}),
             HandleReg(){
-                this.$store.dispatch("Register/VAHandleReg",this.reg)
+                this.$store.dispatch("Register/Reg_Register",this.reg)
             },
             ErrorReg(){
                 let error  = this.$route.query.error;

@@ -1,10 +1,10 @@
-import {User} from "./LoginApi";
+import {ShowUser} from "./LoginApi";
 
 
 const actions = {
-   async ShowUser({}){
-     let data = await User();
-       console.log(data);
+   async Home_User({}){
+     let data = await ShowUser();
+     return  data
     }
 };
 const state = {};

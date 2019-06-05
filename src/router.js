@@ -62,7 +62,6 @@ const router = new Router({
 });
 router.beforeEach((to, from, next) => {
   let session = store.state.session;
-  console.log(from)
   if (!!session){
     to.meta.Login?next():next("/home")
   }else {

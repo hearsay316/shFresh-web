@@ -320,7 +320,9 @@
         },
         methods: {
             GetUser() {
-                this.$store.dispatch("Home/ShowUser");
+              const user = this.$store.dispatch("Home/Home_User").then(res=>res)
+           let a =  user.then(res=>{console.log(res);  throw res})
+               a.then((res)=>{console.log(res+256254)}).catch(error=>{console.log(error,14)})
             }
         },
         components: {

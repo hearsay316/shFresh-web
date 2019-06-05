@@ -1,9 +1,9 @@
-import {register} from "./LoginApi";
+import {HandelRegister} from "./LoginApi";
 
 
 const actions = {
-    async VAHandleReg({},data){
-        let res = await register(data);
+    async Reg_Register({},data){
+        let res = await HandelRegister(data);
         console.log(res);
     }
 };

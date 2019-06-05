@@ -55,10 +55,9 @@ export default {
   },
     // //  res !== 401 ? this.$router.push("/home") : this._loginError(res))
   methods: {
-    ...mapActions({_Login: "Login/Login"}),
+    ...mapActions({$Login: "Login/Log_Login"}),
       HandleLogin() {
-          this._Login(this.login).then(res =>{
-              console.log(this.$route, this.$router,66666)
+          this.$Login(this.login).then(res =>{
                this.$router.push({path:"/home"})
               })
       },
@@ -67,10 +66,7 @@ export default {
           this.$refs.LoginForm.reset(); // 清空表单
       },
       init(){
-          let success  = this.$route.query.success;
-          if (success){
-            this.$message.success(success);
-          }
+          this.$route.query.success&&this.$message.success(this.$route.query.success);
       }
   },
   computed:{

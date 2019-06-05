@@ -1,14 +1,13 @@
-import {LoginUser} from "./LoginApi";
+import {HandleLoginUser} from "./LoginApi";
 
-
+//
 const actions = {
-    Login({ commit },data){
-     return LoginUser(data).then(res=>{
-             commit("MULogin","登陆成功",{root:true})
+    Log_Login({ commit },data){
+     return HandleLoginUser(data).then(res=>{
+             commit("MULogin","登陆成功",{root:true});
          return res
      }).catch((error)=>{
-         console.log(error)
-         return error})
+         throw error})
     }
 };
 const state = {};

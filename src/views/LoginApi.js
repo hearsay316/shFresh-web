@@ -6,7 +6,7 @@ export const HandleLoginUser= (data)=>{
        withCredentials: true,
        url: 'http://localhost:8080/login',
        data: data
-   }).then(res=>res.data).catch(error=>Error(error))
+   }).then(res=>res.data).catch(error=>{throw error})
 };
 
 export const ShowUser =()=>{

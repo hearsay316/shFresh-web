@@ -4,7 +4,10 @@ import {ShowUser} from "./LoginApi";
 const actions = {
    async Home_User({}){
      let data = await ShowUser();
-     return  data
+      if (typeof data ==="number"){
+          throw "错误"
+      }
+      return data;
     }
 };
 const state = {};

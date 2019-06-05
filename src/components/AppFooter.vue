@@ -25,6 +25,7 @@
 
 <style lang="stylus" scoped>
     .footer
+        width: 100%
         border-top: 2px solid #42ad46;
         margin: 0 0 30px 0;
         .foot_link

@@ -308,10 +308,12 @@
           </ul>
         </div>
       </div>
+      <app-footer></app-footer>
     </div>
 </template>
 
 <script>
+  import AppFooter from "../components/AppFooter"
     // @ is an alias to /src
     export default {
         name: 'home',
@@ -326,7 +328,7 @@
             }
         },
         components: {
-
+            AppFooter
         }
     }
 </script>

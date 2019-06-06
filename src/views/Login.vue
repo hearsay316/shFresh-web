@@ -60,7 +60,8 @@
             ...mapActions({$Login: "Login/Log_Login"}),
             HandleLogin() {
                 this.$Login(this.login).then(res => {
-                    this.$router.push({path: "/home"})
+                    console.log(res)
+                    //this.$router.push({path: "/home"})
                 }, (error) => {
                     console.log(error.response);
                 })

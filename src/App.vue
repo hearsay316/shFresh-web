@@ -1,54 +1,45 @@
 <template>
   <div id="app">
+    <Spin fix v-if="$store.state.isShowLoading">
+      <Icon type="ios-loading" size=18 class="demo-spin-icon-load"></Icon>
+      <div>Loading</div>
+    </Spin>
    <router-view></router-view>
   </div>
 </template>
 
 <script>
-
-
 export default {
   name: 'app',
+  components: {
 
+  },mounted() {
+      console.log(this)
+    }
 }
 </script>
 
 <style>
-  .no-mp {
-    margin-top: 0px;
-  }
-  .padding-8{
-    padding-left:8px;
-  }
-  a {
-    color: #666;
-  }
-  a:hover{
-    color: #ff8800;
-  }
-  input[type="checkbox"] {
-    vertical-align: bottom;
-  }
-  body, ul, ol, p, h1, h2, h3, h4, h5, h6, dl, dd, select, input, textarea, form {
-    margin: 0;
-    padding: 0;
-  }
-  .clearfix:after {
-    clear: both;
-  }
-  a{
-    text-decoration: none;
-  }
-
-  .clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
-  }
 #app {
-  font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 12px;
-  color: #666;
+  text-align: center;
+  color: #2c3e50;
+  position: relative;
 }
+.demo-spin-icon-load{
+  animation: ani-demo-spin 1s linear infinite;
+}
+@keyframes ani-demo-spin {
+  from { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  to   { transform: rotate(360deg);}
+}
+.demo-spin-col{
+  height: 100px;
+  position: relative;
+  border: 1px solid #eee;
+}
+
 </style>

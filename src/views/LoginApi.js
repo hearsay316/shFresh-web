@@ -1,27 +1,29 @@
-import axios from "axios"
+
+import axios from "../utils/ajaxRequest"
  // post请求时handle开始  get为show
 export const HandleLoginUser= (data)=>{
-    return    axios({
+    return    axios.request({
        method: 'post',
        withCredentials: true,
-       url: 'http://localhost:8080/login',
+       url: '/login',
        data: data
-   }).then(res=>res.data).catch(error=>{throw error})
+   })
 };
 
+
 export const ShowUser =()=>{
-   return    axios({
+   return    axios.request({
       method: 'get',
       withCredentials: true,
-      url: 'http://localhost:8080/Article/user',
-   }).then(res=>res.data).catch(error=>401)
+      url: '/Article/user',
+   })
 };
 
 export const HandelRegister= (data)=>{
-   return    axios({
+   return    axios.request({
       method: 'post',
       withCredentials: true,
-      url: 'http://localhost:8080/register',
+      url: '/register',
       data: data
-   }).then(res=>res.data).catch(error=>401)
+   })
 };

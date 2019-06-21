@@ -61,7 +61,7 @@
             HandleLogin() {
                 this.$Login(this.login).then(res => {
                     console.log(res)
-                    //this.$router.push({path: "/home"})
+                    this.$router.push({path: "/home"})
                 }, (error) => {
                     console.log(error.response);
                 })

@@ -1,12 +1,12 @@
 import {ShowUser} from "./LoginApi";
 
-
 const actions = {
    async Home_User({}){
      let data = await ShowUser();
       if (typeof data ==="number"){
           throw "错误"
       }
+      console.log(data)
       return data;
     }
 };

@@ -5,10 +5,10 @@
         <div class="header">
           <div class="welcome fl">欢迎来到天天生鲜!</div>
           <div class="fr">
-            <div class="login_info fl">
-              欢迎您：<em>张 山</em>
+            <div class="login_info fl" v-if="isUser">
+              欢迎您：<em>{{isUser}}</em>
             </div>
-            <div class="login_btn fl">
+            <div class="login_btn fl" v-else>
               <a href="login.html">登录</a>
               <span>|</span>
               <a href="register.html">注册</a>
@@ -313,6 +313,7 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
   import AppFooter from "../components/AppFooter"
     // @ is an alias to /src
     export default {
@@ -327,12 +328,15 @@
           },error=>{
               console.log(error.response)
           })
-
-
             }
         },
         components: {
             AppFooter
+        },
+        computed:{
+            ...mapState({
+                isUser: state=>state.user.username
+            })
         }
     }
 </script>

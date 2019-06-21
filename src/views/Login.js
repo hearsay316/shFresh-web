@@ -5,6 +5,7 @@ const actions = {
     Log_Login({ commit },data){
      return HandleLoginUser(data).then(res=>{
              commit("MULogin","登陆成功",{root:true});
+             commit("ShowUser",res,{root:true});
          return res
      }).catch((error)=>{
          throw error})

@@ -1,4 +1,7 @@
 export default {
   session:"",
-  isShowLoading:false
+  isShowLoading:false,
+  user:{
+    username:''
+  }
 }
